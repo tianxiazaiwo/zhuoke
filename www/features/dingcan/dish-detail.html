@@ -1,0 +1,31 @@
+<ion-header-bar class="bar_title">
+  <h1 class="title">{{dish.name}}</h1>
+  <div class="buttons">
+    <button class="button button-icon ion-ios7-close-outline" ng-click="closeDetail()"></button>
+  </div>
+</ion-header-bar>
+
+<div style="position: relative;">
+  <img class="ls-lazyload" style="width: 100%; height:{{detailImgSize.height}}px;" data-src="{{dish.pic|ls_img_url:detailImgSize.width+'x'+detailImgSize.height+'f'+imgCompress}}" /><span style="left:{{detailImgSize.loadingX}}px; top:{{detailImgSize.loadingY}}px;">&#xf29d;</span>
+</div>
+<div class="row" ng-show="dish.remd">
+  <div style="display:inline-block; margin:5px 0px;">推荐:</div>
+  <div class="col" style="font-family: Ionicons; font-size:18px; color:#ef4437">{{'&#xf1e0;'|ls_repeat:dish.remd}}{{'&#xf1df;'|ls_repeat:5-dish.remd}}</div>
+</div>
+<div class="row">
+  <div style="display:inline-block; margin:5px 0px;">价格:</div>
+  <div class="col">￥{{dish.price|ls_number:1}}</div>
+</div>
+<div class="row">
+  <div style="display:inline-block; margin:5px 0px;">介绍:</div>
+  <div class="col" style="max-height:65px; overflow:hidden;">{{dish.text||'暂无介绍'}}</div>
+</div>
+
+<center>
+  <button ng-hide="dish.amount" class="btn_ordering_1 col-66 bor_rad_17 button-small button-assertive" style="margin-bottom:-15px; margin-top:10px; width:120px;" ng-click="plusDishAmount(dish); $event.stopPropagation();">加入菜单</button>
+  <div ng-show="dish.amount" style="disply:inline-block;line-height:45px;margin-bottom:-26px; margin-top:5px;">
+    <button ng-click="minusDishAmount(dish); $event.stopPropagation();" class="button button-icon icon ion-ios7-minus-outline"></button>
+    {{dish.amount}}
+    <button ng-click="plusDishAmount(dish); $event.stopPropagation();" class="button button-icon icon ion-ios7-plus-outline"></button>
+  </div>
+</center>

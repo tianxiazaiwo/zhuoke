@@ -1,0 +1,56 @@
+<ion-view title="订单详情">
+  <ion-content>
+    <div style="color:#78665E;font-size:large;padding:15px;font-weight:bolder;background-color: #FFF9E5;border-top:solid 1px #ebebeb;border-bottom:solid 1px #ebebeb;">
+      {{order.status}}
+    </div>
+    <div class="list card">
+      <p class="item">
+        <span style="color:#004B7C">{{order.shop_name}}</span>
+      </p>
+
+      <p class="item">
+        {{order.dinner_time}}
+        <span style="float:right;">{{order.dinner_num}}人 | {{order.room|ls_mapped_value:seat_types}}</span>
+      </p>
+
+      <p class="item" ng-show="order.name || order.phone">
+        <span>{{order.name}}</span>
+        <span style="float: right;font:bold;">{{order.phone}}</span>
+      </p>
+    </div>
+
+    <div style="color:#999999;font-size:large;padding-left: 20px;" ng-show="order.dishes.length">
+      菜单详情:
+    </div>
+
+    <div class="list card" ng-show="order.dishes.length">
+      <p class="item" ng-repeat="dish in order.dishes">
+        <span class="row no-padding">
+          <span class="col no-padding">
+            {{dish.name}}
+          </span>
+          <span class="col col-20 no-padding text-right">
+            x{{dish.nums}}
+          </span>
+          <span class="col col-20 no-padding text-right">
+            ￥{{dish.price*dish.nums|ls_number:1}}
+          </span>
+        </span>
+      </p>
+
+
+      <p class="item tar">
+        <span>
+          <span style="color:#999999">总计：{{order.dishes_count}}个菜，</span>
+          <span style="color:#F25F21;">￥{{order.price|ls_number:1}}</span>
+        </span>
+      </p>
+    </div>
+    <div style="margin: 10px;" ng-show="order.is_can_cancel">
+      <button class="button button-block button-stable" ng-click="cancelOrder()">
+        取消订单
+      </button>
+    </div>
+  </ion-content>
+</ion-view>
+<div ng-include="'includes/loading.html'"></div>

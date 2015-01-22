@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="css/ionic.app.min.css" rel="stylesheet" />
+    <link href="css/lsapp.css" rel="stylesheet" />
+    <script type="text/javascript" src="config.js"></script>
+    <script type="text/javascript" src="includes/zepto.min.js"></script>
+    <script type="text/javascript" src="includes/zepto.selector.js"></script>
+    <script type="text/javascript" src="includes/jquery.unveil.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script type="text/javascript" src="lib/ionic/js/angular-route.min.js"></script>
+    <script type="text/javascript" data-main="main" src="lib/require.min.js"></script>
+    <script type="text/javascript" src="includes/php.js"></script>
+  </head>
+  <body class="platform-android platform-cordova platform-webview">
+    <ion-nav-bar class="bar-positive">
+      <ls-back-button class="button-icon icon ion-chevron-left ng-hide ls-back-button"></ls-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="main" animation="no-animation">
+    </ion-nav-view>
+  </body>
+</html>

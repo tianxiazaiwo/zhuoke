@@ -1,0 +1,13 @@
+<div class="bar bar-subheader">
+  <h2 class="title" ng-show="startFrom=='dingcan'">
+    <span ng-class="{'ls-current-step': currentStep==0}">点餐</span> &gt;
+    <span ng-class="{'ls-current-step': currentStep==1}">订座</span> &gt;
+    <span ng-class="{'ls-current-step': currentStep==2}">信息确认</span> &gt;
+    <span ng-class="{'ls-current-step': currentStep==3}">提交订单</span>
+  </h2>
+  <h2 class="title" ng-hide="startFrom=='dingcan'">
+    <span ng-class="{'ls-current-step': currentStep==1}">填写信息</span> &gt;
+    <span ng-class="{'ls-current-step': currentStep==2}">信息确认</span> &gt;
+    <span ng-class="{'ls-current-step': currentStep==3}">提交订单</span>
+  </h2>
+</div>

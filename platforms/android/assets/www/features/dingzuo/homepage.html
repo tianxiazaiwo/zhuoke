@@ -1,0 +1,152 @@
+
+<div ng-show="formMode=='empty'" ng-include="'features/dingzuo/navigation.html'"></div>
+<div ng-show="formMode=='empty' && discount" class="row bar bar-thirdheader" style="background:#ffffcc;color:#78665E">
+  <div class="col">{{discount}}</div>
+</div>
+
+<ion-view title="{{title||'填写订座信息'}}">
+
+  <form ng-submit="orderSubmit()">
+    <ion-content class="has-header has-footer" ng-class="{'has-thirdheader':(formMode=='empty' && discount), 'has-subheader':formMode=='empty'}">
+      <div class="list">
+        <div class="tags">
+          <label class="item item-input item-button-right item-select">
+            <div class="input-label">
+              时间
+            </div>
+            <button type="button" ng-click="openTimeSelector(); $event.stopPropagation();" class="button" style="position:absolute; border: none; background-color: transparent; right:35px; top:5px; font-size:14px; color:333;">
+              {{info.strTime||'请选择就餐时间'}}
+            </button>
+          </label>
+          <label class="item item-input item-button-right item-select">
+            <div class="input-label">
+              人数
+            </div>
+            <button type="button" ng-click="openPersonSelector(); $event.stopPropagation();" class="button" style="position:absolute; border: none; background-color: transparent; right:35px; top:5px; font-size:14px; color:333;">
+              {{info.persons?(info.persons+'位'):'请选择就餐人数'}}
+            </button>
+          </label>
+          <label class="item item-input" style="padding-bottom:25px;">
+            <div class="input-label">
+              座位
+            </div>
+            <div style="position:absolute;top:2px;right:10px">
+              <a class="dp-ib" style="padding:3px 10px;" ng-class="{active:info.seat==1}" ng-click="changeInfoSeat(1)"><span class="analog-radio"></span>大厅</a>
+              <a class="dp-ib" style="padding:3px 10px;" ng-class="{active:info.seat==2, 'ls-disabled':info.persons<balcony_nums}" ng-click="changeInfoSeat(2)"><span class="analog-radio"></span>包厢</a>
+              <div ng-show="balcony_nums" style="text-align:right; padding-right:10px; color:#999; margin-top:-5px;">
+                (≥{{balcony_nums}}人可预订包厢)
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="item-divider">
+          预定人信息
+        </div>
+        <div class="tags">
+          <label class="item item-input">
+            <input class="item-input-flex" style="width:100px; color:#444;" type="text" ng-model="info.name" placeholder="您的姓名">
+            <div style="position:absolute;top:2px;right:10px">
+              <a class="dp-ib" style="padding:3px 10px;" ng-class="{active:info.title==2}" ng-click="changeInfoTitle(2)"><span class="analog-radio"></span>先生</a>
+              <a class="dp-ib" style="padding:3px 10px;" ng-class="{active:info.title==1}" ng-click="changeInfoTitle(1)"><span class="analog-radio"></span>女士</a>
+            </div>
+          </label>
+          <label class="item item-input">
+            <input type="tel" ng-model="info.mobile" placeholder="请输入您的手机号" />
+          </label>
+        </div><!-- #tags -->
+        <div class=" item-divider">
+            备注信息
+          </div>
+        <div class="tags">
+          <div class="item item-input-inset radius_patch">
+            <textarea ng-model="info.text" placeholder="选填, 如: 需要提供儿童座椅"></textarea>
+          </div>
+        </div><!-- #tags -->
+      </div>
+      <div style="height:40px;"></div>
+    </ion-content>
+    <div class="bar bar-footer bar-border-top" ng-show="formMode=='empty'">
+      <button type="submit" style="margin-top:0px; margin-bottom:0px;" class="button button-full btn_ordering_1 bor-rad-17">确认订座信息</button>
+    </div>
+    <div class="bar bar-footer bar-border-top" ng-show="formMode=='modify'">
+      <button type="submit" style="margin-top:0px; margin-bottom:0px;" class="button button-full btn_ordering_1 bor-rad-17">保存</button>
+    </div>
+  </form>
+</ion-view>
+<div ng-include="'includes/loading.html'"></div>
+
+<script id="time-selector.html" type="text/ng-template">
+  <div class="modal time-selector">
+    <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button back-button button-icon icon ion-chevron-left" ng-click="closeTimeSelector()"></button>
+      </div>
+      <h1 class="title">选择时间</h1>
+    </ion-header-bar>
+
+    <div class="content has-header">
+
+      <div class="col no-padding tab_tag_out">
+          <a class="tab_tag"
+             ng-repeat="date in getNearlyDates()"
+             ng-class="{active:isSameDay(selectedTime, date)}"
+             ng-click="changeInfoDate(date)"
+             ng-bind-html="date|ls_stringify_date:'week,friendly,br':baseDate"></a>
+          <a class="tab_tag" ng-click="openDateSelector()"><img src="img/ico_date.png" /><br />更多</a>
+      </div>
+    </div>
+
+    <ion-content>
+      <div class="has-header has-subheader content" style="margin:5px 5px;top: 65px;">
+        <div class="button-bar mtb10">
+          <a class="button btn_time_1" ng-click="lunchOrDinner='lunch'" ng-class="{active:lunchOrDinner=='lunch'}">中餐</a>
+          <a class="button btn_time_1" ng-click="lunchOrDinner='dinner'" ng-class="{active:lunchOrDinner=='dinner'}">晚餐</a>
+        </div>
+        <button
+          ng-click="changeInfoTime(timespan)"
+          ng-class="{active:selectedTimeString==timespan}"
+          ng-disabled="isToday(selectedTime)&&timespan<currentTimeString"
+          ng-show="(lunchOrDinner=='lunch'&&timespan<'17:00')||(lunchOrDinner=='dinner'&&timespan>='17:00')"
+          ng-repeat="timespan in timespans"
+          class="button btn_time_2" style="width:23%;margin:1%;float:left">{{timespan}}</button>
+      </div>
+    </ion-content>
+  </div>
+</script>
+
+
+<script id="date-selector.html" type="text/ng-template">
+  <div class="modal date-selector">
+    <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button back-button button-icon icon ion-chevron-left" ng-click="closeDateSelector()"></button>
+      </div>
+      <h1 class="title">选择日期</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+      <div ng-repeat="date in dates">
+        <ion-radio ng-click="closeDateSelector()" ng-model="form.selectedDateIdx" ng-value="$index">{{date|ls_stringify_date:'week,friendly,nr':baseDate}}</ion-radio>
+      </div>
+    </ion-content>
+  </div>
+</script>
+
+
+<script id="persons-selector.html" type="text/ng-template">
+  <div class="modal person-selector">
+    <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button back-button button-icon icon ion-chevron-left" ng-click="closePersonSelector()"></button>
+      </div>
+      <h1 class="title">选择人数</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+      <div ng-repeat="num in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+        <ion-radio ng-click="closePersonSelector()" ng-model="info.persons" ng-value="num">{{num}}位</ion-radio>
+      </div>
+    </ion-content>
+  </div>
+</script>
+
+

@@ -1,0 +1,7 @@
+<div ng-hide="loadingStatus==1" class="has-header" style="position: absolute; z-index:99999999999;background: white;bottom:0px;left: 0px;right: 0px;">
+  <div ng-switch="loadingStatus" style="height: 50px; position: absolute; top: 50%; left:0px; right:0px; text-align: center;">
+    <button ng-switch-when="2" class="button" ng-click="loadingRetry()">重试</button>
+    <div style="text-align: center;" ng-switch-when="11">暂无数据</div>
+    <span ng-switch-default class="ion-loading-d" style="font-size: 30px;"></span>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C1D8A069-A1CD-49EB-8843-C03F310D6E44</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WanjiaDingcan</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>578BD40D-8B9A-4C19-8709-BB5802E1ED75</key>
+		<string>git:m/dingcan.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/WanjiaDingcan.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>578BD40D-8B9A-4C19-8709-BB5802E1ED75</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>git:m/dingcan.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>578BD40D-8B9A-4C19-8709-BB5802E1ED75</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>578BD40D-8B9A-4C19-8709-BB5802E1ED75</string>
+			<key>IDESourceControlWCCName</key>
+			<string>dingcan</string>
+		</dict>
+	</array>
+</dict>
+</plist>

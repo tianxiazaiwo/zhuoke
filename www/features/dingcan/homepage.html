@@ -1,0 +1,50 @@
+
+<div ng-show="formMode=='empty'" ng-include="'features/dingzuo/navigation.html'"></div>
+<div ng-show="formMode=='empty' && discount" class="row bar bar-thirdheader" style="background:#ffffcc;color:#78665E">
+  <div class="col">{{discount}}</div>
+</div>
+
+<ion-view title="{{title||'在线点餐'}}">
+  <ion-content class="col no-padding border-right col-33 has-header has-footer side-menu side-menu_order" ng-class="{'has-thirdheader':(formMode=='empty' && discount), 'has-subheader':formMode=='empty'}">
+    <ion-list>
+      <ion-item class="no-divider" ng-show="order.getTotalAmount()" ng-class="currentCate==-1?'active':''" ng-click="changeCurrentCate(-1)" type="item-text-wrap">
+        已点菜品
+        <span style="right:10px;" class="badge badge-assertive">{{order.getTotalAmount()}}</span>
+      </ion-item>
+      <ion-item class="no-divider" ng-repeat="name in dishCates" ng-class="currentCate==$index?'active':''" ng-click="changeCurrentCate($index)" type="item-text-wrap">
+        {{name}}
+        <span style="right:10px;" ng-show="order.getCateAmount(name)" class="badge badge-assertive">{{order.getCateAmount(name)}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-content delegate-handle="dish-list" on-scroll-complete="onDishListScroll()" class="col no-padding col-67 col-offset-33 has-header has-footer menu_content dish-list" ng-class="{'has-thirdheader':(formMode=='empty' && discount), 'has-subheader':formMode=='empty'}">
+    <ion-list>
+      <ion-item ng-repeat="dish in getDishsOfCurrentCate()" ng-click="showDetail(dish); $event.stopPropagation();" class="item item-thumbnail-left item_order" style="padding-left: 80px; min-height: 75px;">
+          <img class="ls-lazyload" style="width:55px;height:55px;" data-src="{{dish.pic|ls_img_url:'55x55f75'}}" /><span style="left:20px; top:20px;">&#xf29d;</span>
+          <h2>{{dish.name}}</h2>
+          <p>
+            <span class="cor_f60">￥{{dish.price|ls_number:1}}</span><br/>
+            <div style="position:absolute; right:0px; top:10px; line-height:45px; padding-top:20px;" ng-click="$event.stopPropagation();">
+              <span class="ng-hide" ng-show="dish.amount">
+                <button ng-click="minusDishAmount(dish)" class="button button-icon icon ion-ios7-minus-outline"></button>
+                {{dish.amount}}
+              </span>
+              <button ng-click="plusDishAmount(dish)" class="button button-icon icon ion-ios7-plus-outline"></button>
+            </div>
+          </p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>
+
+
+<div class="bar bar-footer bar-border-top bg_ebe">
+  <div class="col">当前总计: <span class="cor_f60">￥{{order.getTotalMoney()}}</span></div>
+  <button ng-show="formMode=='empty'" style="width:140px;" class="button btn_ordering_1 no-padding bor-rad-17 dp-b" ng-click="nextStep()">下一步</button>
+  <button ng-show="formMode=='modify'" style="width:140px;" class="button btn_ordering_1 no-padding bor-rad-17 dp-b" ng-click="nextStep()">保存</button>
+</div>
+
+<div ng-include="'includes/loading.html'"></div>
+

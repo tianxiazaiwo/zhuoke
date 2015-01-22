@@ -1,0 +1,34 @@
+<ion-view title="我的订单">
+  <ion-content>
+
+    <div>
+      <div bindonce class="card" ng-repeat="order in orders.data" >
+        <p class="item" ng-click="viewDetail(order)">
+          <span style="color:#004B7C" bo-text="order.shop_name"></span>
+          <span bo-show="order.is_daichuli" class="ico_orders">等待接单<span class="ico_orders_arw"></span></span>
+
+        </p>
+        <p class="item" ng-click="viewDetail(order)">
+          <span bo-text="order.dinner_time"></span>
+          <span style="float:right;"><span bo-text="order.dinner_num"></span>人 | <span bo-text="order.room|ls_mapped_value:seat_types"></span><span style="margin-left: 10px">&gt;</span></span>
+        </p>
+        <p class="item" bo-show="order.price">
+          <span style="color:#ADADAD">金额：</span>
+          <span style="color:#FF6600">￥<span bo-text="order.price|ls_number:1"></span></span>
+        </p>
+        <p class="item">
+          <span style="color:#ADADAD">订单状态：</span>
+          <span><span bo-text="order.status"></span></span>
+        </p>
+      </div>
+    </div>
+    <div style="margin: 0px 10px 0px 10px" ng-show="orders.has_more">
+      <button class="button button-block button-stable" ng-click="loadMore()">
+        <span ng-show="is_loading"><em class="icon ion-loading-c"></em> 加载中...</span>
+        <span ng-hide="is_loading">加载更多</span>
+      </button>
+    </div>
+    <div style="height: 40px"></div>
+  </ion-content>
+</ion-view>
+<div ng-include="'includes/loading.html'"></div>

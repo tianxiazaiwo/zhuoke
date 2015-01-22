@@ -1,0 +1,71 @@
+<div ng-include="'features/dingzuo/navigation.html'"></div>
+
+<ion-view title="{{title||'确认订座信息'}}">
+  <form ng-submit="orderConfirm()">
+    <ion-content class="has-header has-subheader has-footer ">
+      <div class="list">
+        <div class="re item-divider item-button-right mtb10">
+          确认您的订单信息
+          <button type="button" ng-click="modifyOrderInfo(); $event.stopPropagation();" style="margin-top:-7px;" class="button button-clear button-positive">修改订座信息</button>
+        </div>
+        <div class="tags">
+          <div class="item">
+            {{shopName}}
+          </div>
+          <div class="item">
+            <div class="row no-padding">
+              <div class="col no-padding">
+                {{order.info.strTime}}
+              </div>
+              <div class="col col-33 no-padding text-right">
+                {{order.info.persons}}位 | {{order.info.seat|ls_mapped_value:seat_types}}
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row no-padding">
+              <div class="col no-padding">
+                {{order.info.name}} {{order.info.title|ls_mapped_value:titles}}
+              </div>
+              <div class="col col-33 no-padding text-right">
+                {{order.info.mobile}}
+              </div>
+            </div>
+          </div>
+        </div><!-- #tags -->
+        <div class="item" ng-show="order.info.text">
+          备注: {{order.info.text}}
+        </div>
+
+        <div class="re item-divider item-button-right mtb10" ng-show="order.getTotalAmount()">
+          确认您的菜单信息
+          <button type="button" ng-click="modifyDishInfo(); $event.stopPropagation();" style="margin-top:-7px;" class="button button-clear button-positive">修改菜单信息</button>
+        </div>
+        <div class="tags">
+          <div ng-repeat="dish in order.getSelectedDishs()" class="item">
+            <div class="row no-padding">
+              <div class="col no-padding">
+                {{dish.name}}
+              </div>
+              <div class="col col-20 no-padding text-right">
+                <span class="cor_999">{{dish.amount}}份</span>
+              </div>
+              <div class="col col-15 no-padding text-right fz15">
+                ￥{{dish.price*dish.amount|ls_number:1}}
+              </div>
+            </div>
+          </div>
+          <div class="item" ng-show="order.getTotalAmount()">
+            <div class="tar">
+              共计: <span class="cor_f60 fz15">{{order.getTotalMoney()}}元</span>
+            </div>
+
+          </div>
+        </div><!-- #tags -->
+      </div>
+    </ion-content>
+    <div class="bar bar-footer bar-border-top">
+      <button type="submit" style="margin-top:0px; margin-bottom:0px;" class="button button-full btn_ordering_1 bor-rad-17">提交订单</button>
+    </div>
+  </form>
+</ion-view>

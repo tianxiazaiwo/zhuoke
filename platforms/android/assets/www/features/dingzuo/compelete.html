@@ -1,0 +1,30 @@
+<ion-view title="{{title||'订单提交'}}">
+
+  <div class="content padding has-header">
+
+    <div class="tags">
+
+      <div style="text-align:center;margin-top:20px;">
+        <img style="width: 35%;" alt="" src="img/success_ing.png" />
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <p class="cor_999">预定信息已提交，等待商家确认中</p>
+          <p class="success_tle_2">预计需要2~10分钟</p>
+          <p class="success_tle_3">稍后系统将短信通知您预定结果!</p>
+        </div>
+      </div>
+    </div><!-- #tags -->
+
+
+    <a class="button-block btn_ordering_1 mtb10 lh37 dp-b" ng-href="#/orders/my-orders" ls-nav-clear>查看订单</a>
+    <button class="button-block btn_ordering_2 mtb10 dp-b" ng-click="exitApp()">返回店铺</button>
+
+    <div class="row">
+      <div class="col text-center cor_999">
+      如需帮助，请拨打： 400-8855-365
+      </div>
+    </div>
+  </div>
+
+</ion-view>

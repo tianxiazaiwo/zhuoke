@@ -1,0 +1,18 @@
+.ls-lazyload {background: #ccc;  opacity: 0.6;}
+.ls-lazyload-done {opacity: 1; transition: opacity .3s ease-in;}
+.ls-lazyload-done + span {display:none;}
+.ls-lazyload + span {
+  font-family: Ionicons;
+  font-size: 35px;
+  width:35px;
+  height:35px;
+  line-height:35px;
+  position:absolute;
+  color:#999;
+  display:block;
+  -webkit-animation: spin 1s infinite linear;
+  -moz-animation: spin 1s infinite linear;
+  -o-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+.item-input input.item-input-flex {font-size:14px;}

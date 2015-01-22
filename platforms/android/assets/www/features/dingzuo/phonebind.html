@@ -1,0 +1,30 @@
+<ion-view title="{{title}}">
+  <ion-content>
+    <p style="margin: 30px 0px 10px 20px; color:gray;">非账号绑定的手机号码, 验证一下吧！</p>
+
+    <div class="card">
+      <label class="item item-input">
+        <span class="input-label" style="width:60px;">手机号</span>
+        {{phone}}
+        <button class="button button-energized btn_change" style="position:absolute; top:0px;right:0px;" ng-click="alert(1);getCheckcode(); $event.stopPropagation();" ng-disabled="ccText != ccTextDefault">
+          {{ccText}}
+        </button>
+      </label>
+      <label class="item item-input">
+        <span class="input-label" style="width:60px;">验证码</span>
+        <input id="checkcode" type="number" placeholder="请输入验证码" ng-model="$parent.checkcode" ng-trim="true">
+      </label>
+    </div>
+    <div style="padding: 0px 10px 0px 10px;">
+      <button class="button button-block button-assertive" ng-click="submitCheckcode()">
+        <span ng-show="is_loading"><em class="icon ion-loading-c"></em>验证中...</span>
+        <span ng-hide="is_loading">提交</span>
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>
+<button class="button button-block button-stable" ng-click="loadMore()">
+  <span ng-show="is_loading"><em class="icon ion-loading-c"></em> 加载中...</span>
+  <span ng-hide="is_loading">加载更多</span>
+</button>

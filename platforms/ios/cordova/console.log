@@ -1,0 +1,67 @@
+2014-07-14 18:05:32.880 WanjiaDingcan[58201:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-14 18:05:33.678 WanjiaDingcan[58201:70b] Unlimited access to network resources
+2014-07-14 18:05:43.040 WanjiaDingcan[58201:70b] [CDVTimer][keyboard] 0.086010ms
+2014-07-14 18:05:43.063 WanjiaDingcan[58201:70b] [CDVTimer][wizspinnerplugin] 21.897018ms
+2014-07-14 18:05:45.295 WanjiaDingcan[58201:70b] [CDVTimer][statusbar] 2230.935991ms
+2014-07-14 18:05:45.295 WanjiaDingcan[58201:70b] [CDVTimer][TotalPluginStartup] 2255.223989ms
+2014-07-14 18:05:46.631 WanjiaDingcan[58201:70b] customSpinnerPath is default
+2014-07-14 18:05:46.849 WanjiaDingcan[58201:70b] spinner path - default
+2014-07-14 18:05:52.090 WanjiaDingcan[58201:70b] Resetting plugins due to page load.
+2014-07-14 18:06:04.497 WanjiaDingcan[58201:70b] Finished load of: file:///Users/guxy/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/EA56ECB1-7AC7-4A4B-9D7D-93E21F8F2A6D/WanjiaDingcan.app/www/index.html
+2014-07-14 18:06:06.016 WanjiaDingcan[58201:70b] THREAD WARNING: ['Device'] took '564.959961' ms. Plugin should use a background thread.
+2014-07-14 18:06:06.187 WanjiaDingcan[58201:70b] deviceready has not fired after 5 seconds.
+2014-07-14 18:06:06.187 WanjiaDingcan[58201:70b] Channel not fired: onCordovaInfoReady
+2014-07-14 18:06:08.212 WanjiaDingcan[58201:70b] THREAD WARNING: ['StatusBar'] took '30.520264' ms. Plugin should use a background thread.
+2014-07-14 18:07:24.731 WanjiaDingcan[58414:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-14 18:07:24.795 WanjiaDingcan[58414:70b] Unlimited access to network resources
+2014-07-14 18:07:24.844 WanjiaDingcan[58414:70b] [CDVTimer][keyboard] 0.126004ms
+2014-07-14 18:07:24.845 WanjiaDingcan[58414:70b] [CDVTimer][wizspinnerplugin] 0.057995ms
+2014-07-14 18:07:24.982 WanjiaDingcan[58414:70b] [CDVTimer][statusbar] 136.810005ms
+2014-07-14 18:07:24.983 WanjiaDingcan[58414:70b] [CDVTimer][TotalPluginStartup] 138.709009ms
+2014-07-14 18:07:25.023 WanjiaDingcan[58414:70b] customSpinnerPath is default
+2014-07-14 18:07:25.024 WanjiaDingcan[58414:70b] spinner path - default
+2014-07-14 18:07:25.232 WanjiaDingcan[58414:70b] Resetting plugins due to page load.
+2014-07-14 18:07:25.656 WanjiaDingcan[58414:70b] Finished load of: file:///Users/guxy/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/EA56ECB1-7AC7-4A4B-9D7D-93E21F8F2A6D/WanjiaDingcan.app/www/index.html
+2014-07-14 18:10:36.506 WanjiaDingcan[58779:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-14 18:10:36.516 WanjiaDingcan[58779:70b] Unlimited access to network resources
+2014-07-14 18:10:36.545 WanjiaDingcan[58779:70b] [CDVTimer][keyboard] 0.074983ms
+2014-07-14 18:10:36.546 WanjiaDingcan[58779:70b] [CDVTimer][wizspinnerplugin] 0.048041ms
+2014-07-14 18:10:36.562 WanjiaDingcan[58779:70b] [CDVTimer][statusbar] 15.110970ms
+2014-07-14 18:10:36.563 WanjiaDingcan[58779:70b] [CDVTimer][TotalPluginStartup] 17.520010ms
+2014-07-14 18:10:36.588 WanjiaDingcan[58779:70b] customSpinnerPath is default
+2014-07-14 18:10:36.588 WanjiaDingcan[58779:70b] spinner path - default
+2014-07-14 18:10:36.717 WanjiaDingcan[58779:70b] Resetting plugins due to page load.
+2014-07-14 18:10:36.910 WanjiaDingcan[58779:70b] Finished load of: file:///Users/guxy/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/EA56ECB1-7AC7-4A4B-9D7D-93E21F8F2A6D/WanjiaDingcan.app/www/index.html
+2014-07-14 18:12:39.987 WanjiaDingcan[59027:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-14 18:12:40.015 WanjiaDingcan[59027:70b] Unlimited access to network resources
+2014-07-14 18:12:40.038 WanjiaDingcan[59027:70b] [CDVTimer][keyboard] 0.124037ms
+2014-07-14 18:12:40.039 WanjiaDingcan[59027:70b] [CDVTimer][wizspinnerplugin] 0.055015ms
+2014-07-14 18:12:40.049 WanjiaDingcan[59027:70b] [CDVTimer][statusbar] 10.126948ms
+2014-07-14 18:12:40.050 WanjiaDingcan[59027:70b] [CDVTimer][TotalPluginStartup] 11.928022ms
+2014-07-14 18:12:40.059 WanjiaDingcan[59027:70b] customSpinnerPath is default
+2014-07-14 18:12:40.060 WanjiaDingcan[59027:70b] spinner path - default
+2014-07-14 18:12:40.125 WanjiaDingcan[59027:70b] Resetting plugins due to page load.
+2014-07-14 18:12:40.286 WanjiaDingcan[59027:70b] Finished load of: file:///Users/guxy/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/EA56ECB1-7AC7-4A4B-9D7D-93E21F8F2A6D/WanjiaDingcan.app/www/index.html
+2014-07-14 18:12:42.032 WanjiaDingcan[59027:70b] ERROR: Method 'setBackPreventingText:' not defined in Plugin 'WizSpinnerPlugin'
+2014-07-14 18:12:42.032 WanjiaDingcan[59027:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "INVALID",
+  "WizSpinnerPlugin",
+  "setBackPreventingText",
+  [
+    ""
+  ]
+]
+2014-07-14 18:12:42.033 WanjiaDingcan[59027:70b] ERROR: Method 'setBackPreventingText:' not defined in Plugin 'WizSpinnerPlugin'
+2014-07-14 18:12:42.033 WanjiaDingcan[59027:70b] -[CDVCommandQueue executePending] [Line 158] FAILED pluginJSON = [
+  "INVALID",
+  "WizSpinnerPlugin",
+  "setBackPreventingText",
+  [
+    {
+      "title" : "离开订餐",
+      "text" : "现在离开，订餐信息将被清空噢!",
+      "negative" : "确定",
+      "neutral" : "继续订餐"
+    }
+  ]
+]
